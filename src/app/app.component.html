@@ -1,0 +1,17 @@
+<table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+       <th><input type="text" [(ngModel)]="name" [id]="myId" value = "Akash"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let arr of model">
+      <tr>
+        <td>{{arr.name}}</td>
+        <td>{{arr.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h1>{{name}}</h1>
