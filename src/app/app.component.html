@@ -1,9 +1,22 @@
+<h1 [ngStyle]="textStyles" *ngIf="false; else elseBlock ">Welcome to World of angular</h1>
+<br/>
+<ng-template #elseBlock>
+  <h3><input #myInput type="text"><button (click)="submitClcik(myInput.value)">Submit_Log</button></h3>
+</ng-template>
+
+<div [ngSwitch]="color">
+<div *ngSwitchCase="'red'">Color is red</div>
+<div *ngSwitchCase="'blue'">Color is blue {{receivedData}}</div>
+<div *ngSwitchCase="'green'">Color is green</div>
+<div *ngSwitchDefault>Color is orange</div>
+</div>
+<app-new-component (childEvent)="receivedData=$event" [parentData]="passData"></app-new-component>
 <table border="1">
     <thead>
       <tr>
         <th>Name</th>
         <th>ID</th>
-       <th><input type="text" [(ngModel)]="name" [id]="myId" value = "Akash"></th>
+       <th><button [(ngModel)]="submit" (click)="onClick()" >Submit</button></th>
       </tr>
     </thead>
     <tbody *ngFor="let arr of model">
@@ -14,4 +27,4 @@
     </tbody>
   </table>
   
-  <h1>{{name}}</h1>
+  <h1>{{model[0].id}}</h1>
